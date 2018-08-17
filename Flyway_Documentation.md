@@ -80,48 +80,30 @@ These migrations do not have a version number. They just have the description an
 1. Add the following dependencies to pom.xml:
 ```xml
 <dependency>
-
      <groupId>mysql</groupId>;
-
      <artifactId>mysql-connector-java</artifactId>;
-
 </dependency>
 <dependency>
      <groupId>org.flywaydb</groupId>;
-
      <artifactId>flyway-core</artifactId>;
-
 </dependency>
 <dependency>
-
      <groupId>com.h2database</groupId>
-
      <artifactId>h2<\artifactId>
-
      <version>1.4.191</version>;
-
      <scope>runtime</scope>;
-
 </dependency>
 ```
 2. Add the following plugin to pom.xml:
 ```xml
 <plugin>
-
         <groupId>org.flywaydb</groupId>
-
         <artifactId>flyway-maven-plugin</artifactId>
-
         <version>5.1.4</version>
-
         <configuration>
-
         <url>jdbc:h2:file:./target/foobar</url>
-
         <user>sa</user>
-
         </configuration>
-
 </plugin>
 ```
 **Step 2: Configuring MySQL and Hibernate**
@@ -130,15 +112,15 @@ These migrations do not have a version number. They just have the description an
 
 2. Add the following to the properties.xml file:
 
-spring.datasource.url = jdbc:mysql://localhost:3306/project?useSSL=false
+  spring.datasource.url = jdbc:mysql://localhost:3306/project?useSSL=false
 
-spring.datasource.username = root
+  spring.datasource.username = root
 
-spring.datasource.password = user
+  spring.datasource.password = user
 
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+  spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
 
-spring.jpa.hibernate.ddl-auto = validate
+  spring.jpa.hibernate.ddl-auto = validate
 
 **Step 3: Create a domain entity**
 
